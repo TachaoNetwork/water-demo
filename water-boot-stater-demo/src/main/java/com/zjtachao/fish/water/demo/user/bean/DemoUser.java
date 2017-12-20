@@ -20,7 +20,8 @@ import java.util.Date;
  */
 public class DemoUser implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    /** 序列号 **/
+    private static final long serialVersionUID = 1354399788739269506L;
 
     private Long id;
 
@@ -42,10 +43,6 @@ public class DemoUser implements Serializable {
 
     private String deleteFlag;
 
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
 
     public Long getId() {
         return id;
