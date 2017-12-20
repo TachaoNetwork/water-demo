@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjtachao.fish.water.demo.user.mapper.DemoXmlMapper" >
+    <resultMap id="userResultMap" type="com.zjtachao.fish.water.demo.user.bean.DemoUser" >
+        <id column="ID" property="id" />
+        <result column="USER_CODE" property="userCode"  />
+        <result column="USER_NICKNAME" property="userNickName"  />
+        <result column="USER_AGE" property="userAge" />
+        <result column="LOGIN_TIME" property="loginTime"  />
+        <result column="CREATE_TIME" property="createTime"  />
+        <result column="CREATE_ID" property="createId"  />
+        <result column="MODIFY_TIME" property="modifyTime"  />
+        <result column="MODIFY_ID" property="modifyId"  />
+        <result column="DELETE_FLAG" property="deleteFlag"  />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        ID, USER_CODE, USER_NICKNAME , USER_AGE, LOGIN_TIME, CREATE_TIME , CREATE_ID , MODIFY_TIME , MODIFY_ID ,DELETE_FLAG
+    </sql>
+
+    <select id="findAll" resultMap="userResultMap"  >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM demo_user
+        WHERE 1=1
+    </select>
+
+    <select id="findById" parameterType="java.lang.Long" resultMap="userResultMap" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM demo_user
+        WHERE 1=1
+        AND id = #{id}
+    </select>
+
+    <insert id="insertUser" parameterType="com.zjtachao.fish.water.demo.user.bean.DemoUser" >
+        INSERT INTO
+            demo_user(USER_CODE , USER_NICKNAME , USER_AGE , LOGIN_TIME , CREATE_TIME  , MODIFY_TIME , DELETE_FLAG)
+        VALUES
+            (#{userCode} , #{userNickName} , #{userAge} , #{loginTime} , #{createTime} , #{modifyTime} , #{deleteFlag})
+    </insert>
+
+    <update id="updateUserById" parameterType="com.zjtachao.fish.water.demo.user.bean.DemoUser" >
+        UPDATE
+            demo_user
+        SET
+            USER_NICKNAME = #{userNickName} ,
+            MODIFY_TIME = #{modifyTime}
+        WHERE 1=1
+        AND id = #{id}
+    </update>
+
+    <delete id="deleteUserById" parameterType="java.lang.Long" >
+        DELETE FROM demo_user WHERE id = #{id}
+    </delete>
+</mapper>
