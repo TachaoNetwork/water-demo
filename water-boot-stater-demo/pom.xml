@@ -26,7 +26,7 @@
 
 		<docker.maven.plugin.version>1.0.0</docker.maven.plugin.version>
 
-		<docker.image.prefix>water</docker.image.prefix>
+		<docker.image.prefix>zjtachao/water</docker.image.prefix>
 
 	</properties>
 
@@ -53,7 +53,7 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>${docker.maven.plugin.version}</version>
 				<configuration>
-					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					<imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
 					<dockerDirectory>src/main/docker</dockerDirectory>
 					<resources>
 						<resource>
