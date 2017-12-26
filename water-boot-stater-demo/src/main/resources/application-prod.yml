@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 8080
   context-path: /water/demo
 
 spring:
@@ -13,3 +13,20 @@ spring:
       max-idle: 10
       max-wait: 100
       min-idle: 1
+
+  datasource:
+    url: jdbc:mysql://192.168.1.11:3306/fish?useUnicode=true&characterEncoding=UTF-8
+    username: zjtachao
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 1
+      max-active: 10
+      min-idle: 1
+      max-wait: 50
+
+mybatis:
+  type-aliases-package: com.zjtachao.fish
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml

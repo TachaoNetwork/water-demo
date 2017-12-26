@@ -45,7 +45,7 @@ public class DemoTestUploadController extends WaterBootBaseController {
         WaterBootResultBean<String> rest = new WaterBootResultBean<String>();
         try{
             //获取本地路径
-            String localPath = "/Users/duhao/tmp/";
+            String localPath = "/demo/data/";
             String filePath = "";
             if((null != uploadedInputStream) && (null != fileDetail) && !fileDetail.getFileName().equals("")){
                 String fileName = fileDetail.getFileName();

@@ -6,6 +6,7 @@ import com.zjtachao.fish.water.common.base.controller.WaterBootBaseController;
 import com.zjtachao.fish.water.common.data.WaterRedis;
 import com.zjtachao.fish.water.demo.user.bean.DemoUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -15,7 +16,6 @@ public class DemoTestRedisController extends WaterBootBaseController{
 
     @Autowired
     private WaterRedis waterRedis;
-
 
     /**
      * 测试redis
@@ -38,5 +38,31 @@ public class DemoTestRedisController extends WaterBootBaseController{
         }
         return result;
     }
+
+    /**
+     * 测试redis
+     * @param count
+     * @return
+     */
+    @GET
+    @Path("/logs/{count}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
+    public WaterBootResultBean<String> logs(@PathParam("count") Integer count){
+        WaterBootResultBean<String> result = new WaterBootResultBean<String>();
+        try{
+            for(int i=0;i<count;i++){
+                logger.warn("测试日志："+ i);
+            }
+            result.setRst("success");
+        } catch (Exception e){
+            logger.error(e.getMessage() , e);
+            result.setCode(WaterBootResultContext.ResultCode.ERROR.getCode());
+            result.setMsg("服务器出错");
+        }
+        return result;
+    }
+
+
 
 }
