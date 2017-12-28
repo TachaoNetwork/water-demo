@@ -84,7 +84,7 @@ public class DemoTestAnnotationsController extends WaterBootBaseController{
             user.setModifyTime(now);
             demoAnnotationMapper.insertUser(user);
             result.setCode(WaterBootResultContext.ResultCode.SUCCESS.getCode());
-            result.setMsg("success");
+            result.setMsg("保持成功");
         }catch (Exception e){
             logger.error(e.getMessage() , e);
             result.setCode(WaterBootResultContext.ResultCode.ERROR.getCode());

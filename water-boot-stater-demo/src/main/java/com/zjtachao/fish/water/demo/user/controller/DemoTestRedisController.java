@@ -14,8 +14,6 @@ import javax.ws.rs.core.MediaType;
 @Path("/test/redis")
 public class DemoTestRedisController extends WaterBootBaseController{
 
-    @Autowired
-    private WaterRedis waterRedis;
 
     /**
      * 测试redis
@@ -29,6 +27,8 @@ public class DemoTestRedisController extends WaterBootBaseController{
     public WaterBootResultBean<String> hello(@PathParam("name") String name){
         WaterBootResultBean<String> result = new WaterBootResultBean<String>();
         try{
+            String val = waterEnv.getProperty("server.port");
+            logger.info(val);
             waterRedis.set("aaa",name,20);
             result.setRst("success");
         } catch (Exception e){
