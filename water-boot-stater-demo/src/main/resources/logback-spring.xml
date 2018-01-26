@@ -7,9 +7,9 @@
     <!-- dev 文件路径 -->
     <property name="DEV_FILE_PATH" value="/Users/duhao/tmp/" />
     <!-- test 文件路径 -->
-    <property name="TEST_FILE_PATH" value="/Users/duhao/tmp/" />
+    <property name="TEST_FILE_PATH" value="/data/logs/" />
     <!-- prod 文件路径 -->
-    <property name="PROD_FILE_PATH" value="/Users/duhao/tmp/" />
+    <property name="PROD_FILE_PATH" value="/data/logs/" />
 
 
     <!-- dev -->
