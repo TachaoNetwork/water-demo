@@ -14,7 +14,7 @@
 
     <!-- dev -->
     <springProfile name="dev">
-        <appender name="DEV-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <appender name="DEV-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">　
             <file>${DEV_FILE_PATH}/demo.log</file>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
                 <fileNamePattern>${DEV_FILE_PATH}/demo.%d{yyyy-MM-dd_HH_mm}.log</fileNamePattern>
