@@ -46,12 +46,11 @@ public class DemoTestWebSocketAsyncTask {
                         logger.error("发送心跳失败"+ex.getMessage() , ex);
                     }
                 }
-                try{
-                    TimeUnit.SECONDS.sleep(30l);
-                }catch (Exception ex){
-                    logger.error("休眠30秒错误" , ex);
-                }
-
+            }
+            try{
+                TimeUnit.SECONDS.sleep(30l);
+            }catch (Exception ex){
+                logger.error("休眠30秒错误" , ex);
             }
         }
     }
