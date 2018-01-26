@@ -17,7 +17,7 @@
         <appender name="DEV-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">　
             <file>${DEV_FILE_PATH}/demo.log</file>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <fileNamePattern>${DEV_FILE_PATH}/demo.%d{yyyy-MM-dd_HH_mm}.log</fileNamePattern>
+                <fileNamePattern>${DEV_FILE_PATH}/demo.%d{yyyy-MM-dd_HH}.log</fileNamePattern>
             </rollingPolicy>
 
             <layout class="ch.qos.logback.classic.PatternLayout">
@@ -36,7 +36,7 @@
         <appender name="TEST-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <file>${TEST_FILE_PATH}/demo.log</file>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <fileNamePattern>${TEST_FILE_PATH}/demo.%d{yyyy-MM-dd_HH_mm}.log</fileNamePattern>
+                <fileNamePattern>${TEST_FILE_PATH}/demo.%d{yyyy-MM-dd_HH}.log</fileNamePattern>
             </rollingPolicy>
 
             <layout class="ch.qos.logback.classic.PatternLayout">
@@ -55,7 +55,7 @@
         <appender name="PROD-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <file>${PROD_FILE_PATH}/demo.log</file>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <fileNamePattern>${PROD_FILE_PATH}/demo.%d{yyyy-MM-dd_HH_mm}.log</fileNamePattern>
+                <fileNamePattern>${PROD_FILE_PATH}/demo.%d{yyyy-MM-dd_HH}.log</fileNamePattern>
             </rollingPolicy>
 
             <layout class="ch.qos.logback.classic.PatternLayout">
